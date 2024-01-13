@@ -20,6 +20,7 @@ lib64/
 parts/
 sdist/
 var/
+Mistral/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -86,6 +87,7 @@ target/
 .xlsx
 .xls
 .numbers
+.txt
 
 # DVC credentials and files
 dvc-creds.sh
