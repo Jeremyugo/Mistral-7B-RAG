@@ -9,6 +9,7 @@ __pycache__/
 .Python
 env/
 venv/
+/data/uploaded_files/
 build/
 develop-eggs/
 dist/

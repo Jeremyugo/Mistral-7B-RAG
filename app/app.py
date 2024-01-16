@@ -46,6 +46,11 @@ file = st.file_uploader('Upload your document', type=['txt', 'json'])
 
 
 if file is not None:
+    button = st.button("clear chat history")
+    if button and "message" in st.session_state:
+        del st.session_state["message"]
+
+        
     file_path = create_temp_file_path(file)
     indices = get_index(file_path)
     query = st.chat_input('Query your data')
