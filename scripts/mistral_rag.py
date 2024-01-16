@@ -32,6 +32,6 @@ def index_data(file_path):
 
 
 def query_data(query: str, index):
-    chat_engine = index.as_chat_engine(streaming=True)
+    chat_engine = index.as_chat_engine(chat_mode="condense_question", streaming=True)
     response = chat_engine.chat(query)
     return response.response
