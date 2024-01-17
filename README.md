@@ -52,3 +52,4 @@ streamlit run app/app.py
 ```
 
 # Streamlit Demo
+![app · Streamlit - Google Chrome 2024-01-17 14-58-22](https://github.com/Jeremyugo/Mistral-7B-RAG/assets/36512525/a3061b25-4307-4702-8ae0-6b61439664c4)
