@@ -53,7 +53,7 @@ streamlit run app/app.py
 
 # Streamlit Demo
 
+https://github.com/Jeremyugo/Mistral-7B-RAG/assets/36512525/98cf70a6-a99d-4974-8198-7ec03ccdd2f7
 
-https://github.com/Jeremyugo/Mistral-7B-RAG/assets/36512525/a2ffd6e3-4403-48a0-b13d-5c54221e008f
 
 
