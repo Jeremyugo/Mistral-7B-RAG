@@ -15,6 +15,7 @@ from llama_index.vector_stores.qdrant import QdrantVectorStore
 sys.path.append("/home/ubuntu/Mistral-7B-RAG/")
 from scripts.mistral_rag import index_data, query_data
 
+# creates a temporary path to the uploaded file
 @st.cache_data
 def create_temp_file_path(file):
     file_content = file.read()
@@ -25,12 +26,12 @@ def create_temp_file_path(file):
         tempfile_path = temp_file.name
         return tempfile_path    
 
-
+# gets the indices of the embeded data
 @st.cache_resource
 def get_index(file_path):
     return index_data(file_path)
 
-
+# returns a users response to a query
 #@st.cache_resource
 def stream_respose(query, index):
     response = query_data(query, index)
@@ -46,23 +47,24 @@ file = st.file_uploader('Upload your document', type=['txt', 'json'])
 
 
 if file is not None:
-    button = st.button("clear chat history")
+    button = st.button("clear chat history") 
     if button and "message" in st.session_state:
-        del st.session_state["message"]
+        del st.session_state["message"] # clears chat history by deleting the messages stored in the current session state
 
         
     file_path = create_temp_file_path(file)
     indices = get_index(file_path)
-    query = st.chat_input('Query your data')
+    query = st.chat_input('Query your data') # users input
     
-    if "message" not in st.session_state: # Initialize the chat message history
+    if "message" not in st.session_state: # initializes the chat message history
         st.session_state["message"] = [
             {"role": "assistant", "content": "Ask me a question about your document!"}
         ]
         
     if query:
-        st.session_state["message"].append({"role": "user", "content": query})
-        
+        st.session_state["message"].append({"role": "user", "content": query}) # stores users query in the message session state
+
+    # the code below is responsible for the chat like user interface and experience for the app
     for message in st.session_state["message"]:
         with st.chat_message(message["role"]):
             st.write(message["content"])
