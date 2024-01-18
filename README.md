@@ -21,6 +21,7 @@ Conda and Docker is not required for this project. However, it is advisable to s
 
 ```
 python3 -m venv <env-name>
+source <env-name>/bin/activate
 ```
 
 replace `<env-name>` with the name of your new environment. Then run the code below to download Ollama
